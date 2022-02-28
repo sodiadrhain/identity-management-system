@@ -24,17 +24,6 @@ exports.registerValidator = validator(
         errorMessage: "Password is too short and must be minimum 8 characters",
       },
     },
-    isAdmin: {
-      in: ["body"],
-      trim: true,
-      isInt: {
-        errorMessage: "isAdmin must be a interger 1 or 0",
-      },
-      isLength: {
-        options: { min: 1 },
-        errorMessage: "isAdmin must be a interger 1 or 0",
-      },
-    },
   })
 );
 
