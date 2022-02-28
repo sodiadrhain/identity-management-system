@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
 const logger = require("./utils/logger");
+const auth = require("./routes/auth");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -16,6 +17,9 @@ app.get("/", (req, res) =>
     message: "Welcome to the Identity Management System API...",
   })
 );
+
+// Imported routes
+app.use("/api/auth", auth);
 
 // Error route
 app.all("*", (req, res) => {
