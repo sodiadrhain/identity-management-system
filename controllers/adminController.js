@@ -9,6 +9,12 @@ const logger = require("../utils/logger");
  */
 exports.getUsers = async (req, res) => {
   try {
+    const checkIfAdmin = User.findById(req.user.id);
+    if (!checkIfAdmin)
+      res.status(400).json({
+        status: "error",
+        message: "You do not have access to this resource.",
+      });
     const user = await User.find().sort({ date: -1 });
     res.status(200).json({
       status: "success",
@@ -30,6 +36,12 @@ exports.getUsers = async (req, res) => {
  */
 exports.updateUser = async (req, res) => {
   try {
+    const checkIfAdmin = User.findById(req.user.id);
+    if (!checkIfAdmin)
+      res.status(400).json({
+        status: "error",
+        message: "You do not have access to this resource.",
+      });
     const { fullName, birthDate, isAdmin } = req.body;
     const userUpdate = await User.findByIdAndUpdate(req.params.id, {
       $set: { fullName, birthDate, isAdmin },
