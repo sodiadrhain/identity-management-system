@@ -1,0 +1,3 @@
+{
+    "mongodbUrl": "mongodb+srv://admin:admin1234@cluster0.v9ls6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+}
