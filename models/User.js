@@ -12,11 +12,9 @@ const userSchema = new mongoose.Schema({
   },
   fullName: {
     type: String,
-    required: true,
   },
   birthDate: {
     type: Date,
-    required: true,
   },
   isAdmin: {
     type: Boolean,
