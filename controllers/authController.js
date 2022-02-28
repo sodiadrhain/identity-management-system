@@ -26,9 +26,11 @@ exports.register = async (req, res) => {
       isAdmin,
     });
 
+    // hash user password
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
 
+    // create user
     await user.save();
     res
       .status(200)
@@ -43,7 +45,7 @@ exports.register = async (req, res) => {
 
 /**
  * @desc   Register User
- * @route  POST /api/auth/register
+ * @route  POST /api/auth/login
  * @access Public
  */
 exports.login = async (req, res) => {
@@ -63,6 +65,7 @@ exports.login = async (req, res) => {
       },
     };
 
+    // generate user token and start user session
     jwt.sign(
       payload,
       config.get("jwtSecret"),
@@ -79,6 +82,10 @@ exports.login = async (req, res) => {
         });
       }
     );
+
+    // generate and user lastLogin
+    const lastLogin = Date.now();
+    await User.findByIdAndUpdate(user.id, { $set: { lastLogin } });
   } catch (err) {
     logger.error(err.message);
     res

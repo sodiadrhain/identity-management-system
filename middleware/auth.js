@@ -3,7 +3,7 @@ const config = require("config");
 const logger = require("../utils/logger");
 
 // eslint-disable-next-line consistent-return
-export default (req, res, next) => {
+module.exports = (req, res, next) => {
   const header = req.header("identity-auth-token");
   if (!header)
     return res.status(400).json({ message: "Unauthorized, No Token" });

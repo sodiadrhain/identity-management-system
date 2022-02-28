@@ -107,8 +107,6 @@ User update profile data - [PUT] http://localhost:4000/api/user/:user_id (Privat
 
 Admin Fetch All Users - [GET] http://localhost:4000/api/admin/users (Private)
 
-Admin Fetch A User - [GET] http://localhost:4000/api/admin/users/:user_id (Private)
-
 Admin Update A User - [PUT] http://localhost:4000/api/admin/users/:user_id (Private)
 
 ```
