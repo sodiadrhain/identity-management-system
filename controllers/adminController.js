@@ -9,8 +9,8 @@ const logger = require("../utils/logger");
  */
 exports.getUsers = async (req, res) => {
   try {
-    const checkIfAdmin = User.findById(req.user.id);
-    if (!checkIfAdmin)
+    const checkIfAdmin = await User.findById(req.user.id);
+    if (!checkIfAdmin.isAdmin)
       res.status(400).json({
         status: "error",
         message: "You do not have access to this resource.",
@@ -36,8 +36,8 @@ exports.getUsers = async (req, res) => {
  */
 exports.updateUser = async (req, res) => {
   try {
-    const checkIfAdmin = User.findById(req.user.id);
-    if (!checkIfAdmin)
+    const checkIfAdmin = await User.findById(req.user.id);
+    if (!checkIfAdmin.isAdmin)
       res.status(400).json({
         status: "error",
         message: "You do not have access to this resource.",

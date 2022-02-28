@@ -5,7 +5,7 @@ const { updateProfileValidator } = require("../validators/userValidator");
 
 const router = express.Router();
 
-router.route("/:id").put(middleware, updateProfileValidator, updateUser);
 router.route("/").get(middleware, getUser);
+router.route("/").put(middleware, updateProfileValidator, updateUser);
 
 module.exports = router;

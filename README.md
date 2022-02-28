@@ -109,6 +109,8 @@ Admin Fetch All Users - [GET] http://localhost:4000/api/admin/users (Private)
 
 Admin Update A User - [PUT] http://localhost:4000/api/admin/users/:user_id (Private)
 
+Logout User - [GET] http://localhost:4000/api/logout (Private)
+
 ```
 
 1. If endpoint (Private), pass HEADERS with key: identity-auth-token and value: user_access_token to access it, i.e user must be suthenticated/logged in

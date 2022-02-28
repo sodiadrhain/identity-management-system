@@ -16,9 +16,6 @@ exports.updateProfileValidator = validator(
       isString: {
         errorMessage: "Birth Date not valid",
       },
-      isDate: {
-        errorMessage: "Birth Date not valid",
-      },
     },
   })
 );

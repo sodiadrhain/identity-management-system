@@ -23,15 +23,6 @@ exports.getUser = async (req, res) => {
   }
 };
 
-// /**
-//  * @desc   Get All User
-//  * @route  GET /api/user
-//  * @access Private
-//  */
-//  exports.getUsers = (req, res) => {
-//     res.json('djdjdj')
-// }
-
 /**
  * @desc   Update User
  * @route  PUT /api/user
