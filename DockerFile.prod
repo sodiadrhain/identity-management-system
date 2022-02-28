@@ -6,15 +6,15 @@ FROM node:14-alpine
 WORKDIR /app
 
 # This will copy from docker cache unless the package.json file has changed
-COPY ./package.json .
+COPY ./package.json /app
 
 # Install node dependencies
 RUN yarn install
 
 # Copy entire app to docker
-COPY . .
+COPY . /app
 
 # Expose app port
 EXPOSE 4000
 
-CMD ["yarn", "run", "dev"]
+CMD ["yarn", "start"]
