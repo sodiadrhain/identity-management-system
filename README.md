@@ -115,9 +115,3 @@ Logout User - [GET] http://localhost:4000/api/logout (Private)
 
 1. If endpoint (Private), pass HEADERS with key: identity-auth-token and value: user_access_token to access it, i.e user must be suthenticated/logged in
 2. (Public), it can be accessed by anyone
-
-## Other Information
-
-NAME: ADESOJI AWOBAJO
-EMAIL: ADESOJIAWOBAJO@GMAIL.COM
-POSITION: BACKEND ENGINEER
